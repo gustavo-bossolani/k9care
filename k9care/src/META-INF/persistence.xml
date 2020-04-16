@@ -1,0 +1,36 @@
+<persistence version="1.0"
+	xmlns="http://java.sun.com/xml/ns/persistence">
+	<persistence-unit name="oracle"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<properties>
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.Oracle12cDialect" />
+			<property name="javax.persistence.jdbc.driver"
+				value="oracle.jdbc.OracleDriver" />
+			<property name="javax.persistence.jdbc.user" value="RM82550" />
+			<property name="javax.persistence.jdbc.password"
+				value="password" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="postgres"
+		transaction-type="RESOURCE_LOCAL">
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="org.postgresql.Driver" /> 
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/k9care" />
+			<property name="javax.persistence.jdbc.user" value="postgres" /> 
+			<property name="javax.persistence.jdbc.password" value="docker" />
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>
