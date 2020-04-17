@@ -1,7 +1,5 @@
 package br.com.k9care.entity;
 
-import java.math.BigInteger;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,14 +17,14 @@ import br.com.k9care.enums.Sexo;
 public class Padrinho {
 
 	@Id
-	@Column(name="cpf", nullable = false)
+	@Column(name="cpf", nullable = false, length = 15)
 	private String cpf;
 	
 	@Column(name = "nome", length = 80)
 	private String nome;
 	
-	@Column(name = "celular", length = 11)
-	private BigInteger celular;
+	@Column(name = "celular", length = 12)
+	private String celular;
 	
 	@Column(name="sexo", nullable = false)
 	@Enumerated(EnumType.STRING)
@@ -37,10 +35,10 @@ public class Padrinho {
 	
 	public Padrinho() {}
 	
-	public Padrinho(String cpf, String nome, BigInteger celular, Sexo sexo) {
+	public Padrinho(String cpf, String nome, String string, Sexo sexo) {
 		this.cpf = cpf;
 		this.nome = nome;
-		this.celular = celular;
+		this.celular = string;
 		this.sexo = sexo;
 	}
 	
@@ -56,10 +54,10 @@ public class Padrinho {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public BigInteger getCelular() {
+	public String getCelular() {
 		return celular;
 	}
-	public void setCelular(BigInteger celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
 	public Sexo getSexo() {

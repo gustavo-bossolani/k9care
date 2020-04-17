@@ -1,6 +1,7 @@
 package br.com.k9care.entity;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -55,13 +56,12 @@ public class Pedigree {
 	
 	public Pedigree() {}
 
-	public Pedigree(String nome, String raca, Sexo sexo, String cor, 
-			Calendar dataEmissao, Calendar dataNascimento) {
+	public Pedigree(String nome, String raca, Sexo sexo, String cor, Calendar dataNascimento) {
 		this.nome = nome;
 		this.raca = raca;
 		this.sexo = sexo;
 		this.cor = cor;
-		this.dataEmissao = dataEmissao;
+		this.dataEmissao = new GregorianCalendar();
 		this.dataNascimento = dataNascimento;
 	}
 

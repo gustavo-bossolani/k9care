@@ -3,6 +3,7 @@ package br.com.k9care.entity;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -43,8 +44,8 @@ public class Adocao {
 	
 	public Adocao() {}
 	
-	public Adocao(Calendar data, Padrinho padrinho) {
-		this.data = data;
+	public Adocao(Padrinho padrinho) {
+		this.data = new GregorianCalendar();
 		this.padrinho = padrinho;
 	}
 	
