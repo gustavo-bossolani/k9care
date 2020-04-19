@@ -17,13 +17,13 @@ import br.com.k9care.enums.Sexo;
 public class Padrinho {
 
 	@Id
-	@Column(name="cpf", nullable = false, length = 15)
+	@Column(name="cpf", length = 15, nullable = false)
 	private String cpf;
 	
-	@Column(name = "nome", length = 80)
+	@Column(name = "nome", length = 80, nullable = false)
 	private String nome;
 	
-	@Column(name = "celular", length = 12)
+	@Column(name = "celular", length = 12, nullable = false)
 	private String celular;
 	
 	@Column(name="sexo", nullable = false)

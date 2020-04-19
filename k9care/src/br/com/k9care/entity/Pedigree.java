@@ -33,14 +33,14 @@ public class Pedigree {
 	@Column(name = "nome", nullable = false, length = 80)
 	private String nome;
 	
-	@Column(name="raca", nullable = false, length = 255)
+	@Column(name="raca", nullable = false)
 	private String raca;
 	
 	@Column(name="sexo", nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Sexo sexo;
 	
-	@Column(name="cor", nullable = false, length= 80)
+	@Column(name="cor", nullable = false)
 	private String cor;
 	
 	@Column(name="data_emissao", nullable = false)

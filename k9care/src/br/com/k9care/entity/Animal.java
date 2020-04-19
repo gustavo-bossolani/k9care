@@ -32,11 +32,11 @@ public class Animal {
 	private Especie especie;
 	
 	@OneToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST }, fetch = FetchType.EAGER)
-	@JoinColumn(name="pedigree_id")
+	@JoinColumn(name="pedigree_id", nullable = false)
 	private Pedigree pedigree;
 	
 	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.MERGE, CascadeType.PERSIST })
-	@JoinColumn(name = "adocao_id")
+	@JoinColumn(name = "adocao_id", nullable = true)
 	private Adocao adocao;
 	
 	public Animal() {}
